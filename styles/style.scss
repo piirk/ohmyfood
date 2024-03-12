@@ -241,6 +241,10 @@ main {
                     justify-content: space-between;
                     flex: 1;
                     padding: 16px 25px 16px 16px;
+
+                    &--menu {
+                        padding: 12px 15px;
+                    }
                 }
 
                 &__txt {
@@ -332,6 +336,12 @@ main {
             display: flex;
             background-color: $tertiary-color;
             width: 60px;
+        }
+
+        &__price {
+            display: flex;
+            align-items: flex-end;
+            font-weight: 700;
         }
     }
 }

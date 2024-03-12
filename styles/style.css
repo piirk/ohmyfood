@@ -220,6 +220,9 @@ main .section .cards .card__content {
   flex: 1;
   padding: 16px 25px 16px 16px;
 }
+main .section .cards .card__content--menu {
+  padding: 12px 15px;
+}
 main .section .cards .card__txt {
   display: flex;
   flex-direction: column;
@@ -300,6 +303,11 @@ main .menu .card input:checked + .menu__checkmark {
   display: flex;
   background-color: #99e2d0;
   width: 60px;
+}
+main .menu__price {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 700;
 }
 
 .footer {
