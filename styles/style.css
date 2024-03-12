@@ -181,6 +181,8 @@ main .section .cards--menu {
   border: none;
 }
 main .section .cards .card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   border-radius: 15px;
   background-color: #ffffff;
@@ -215,6 +217,7 @@ main .section .cards .card__badge-new--hide {
 main .section .cards .card__content {
   display: flex;
   justify-content: space-between;
+  flex: 1;
   padding: 16px 25px 16px 16px;
 }
 main .section .cards .card__txt {
@@ -268,6 +271,35 @@ main .menu__legend::before {
   height: 1px;
   width: 40px;
   border-bottom: 3px solid #99e2d0;
+}
+main .menu .cards .card {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+}
+main .menu .card input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+main .menu__checkmark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  width: 0;
+  font-size: 24px;
+  color: #ffffff;
+  border-radius: 0 15px 15px 0;
+}
+main .menu .card input:checked + .menu__checkmark {
+  display: flex;
+  background-color: #99e2d0;
+  width: 60px;
 }
 
 .footer {
