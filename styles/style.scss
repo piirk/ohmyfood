@@ -152,7 +152,7 @@ main {
         width: 22px;
         font-size: 22px;
 
-        i {
+        .fa-heart {
             position: absolute;
         }
 
@@ -161,7 +161,7 @@ main {
             opacity: 1;
         }
 
-        .favorite__liked {
+        &__liked {
             transition: opacity 300ms;
             opacity: 0;
             background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
@@ -170,12 +170,12 @@ main {
         }
 
         &:hover {
-            .favorite__unliked {
+            &__unliked {
                 transition: opacity 300ms;
                 opacity: 0;
             }
 
-            .favorite__liked {
+            &__liked {
                 transition: opacity 300ms;
                 opacity: 1;
             }
