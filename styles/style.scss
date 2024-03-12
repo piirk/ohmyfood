@@ -102,23 +102,11 @@ header {
 main {
     @include flex-col();
 
-    .info-group {
-        @include flex-col-center();
-        padding: 50px 30px;
-        gap: 25px;
-        text-align: center;
+    .btn-container {
+        width: max-content;
+        margin: auto;
 
-        &__headline {
-            @include flex-col();
-            gap: 10px;
-        }
-
-        &__btn-container {
-            width: max-content;
-            margin: auto;
-        }
-
-        &__btn-explorer {
+        &__btn {
             height: 50px;
             padding: 0 19px;
             color: #ffffff;
@@ -128,6 +116,22 @@ main {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
             font-weight: 500;
             cursor: pointer;
+
+            &--menu {
+                width: 190px;
+            }
+        }
+    }
+
+    .info-group {
+        @include flex-col-center();
+        padding: 50px 30px;
+        gap: 25px;
+        text-align: center;
+
+        &__headline {
+            @include flex-col();
+            gap: 10px;
         }
     }
     

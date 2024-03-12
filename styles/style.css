@@ -84,6 +84,25 @@ main {
   display: flex;
   flex-direction: column;
 }
+main .btn-container {
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+}
+main .btn-container__btn {
+  height: 50px;
+  padding: 0 19px;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  font-weight: 500;
+  cursor: pointer;
+}
+main .btn-container__btn--menu {
+  width: 190px;
+}
 main .info-group {
   display: flex;
   flex-direction: column;
@@ -96,22 +115,6 @@ main .info-group__headline {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-main .info-group__btn-container {
-  width: -moz-max-content;
-  width: max-content;
-  margin: auto;
-}
-main .info-group__btn-explorer {
-  height: 50px;
-  padding: 0 19px;
-  color: #ffffff;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-  font-weight: 500;
-  cursor: pointer;
 }
 main .restaurant-image {
   display: flex;
