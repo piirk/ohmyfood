@@ -90,15 +90,34 @@ main .btn-container {
   margin: auto;
 }
 main .btn-container__btn {
+  position: relative;
+  z-index: 1;
   height: 50px;
   padding: 0 19px;
   color: #ffffff;
   border: none;
   border-radius: 25px;
-  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
   font-weight: 500;
   cursor: pointer;
+}
+main .btn-container__btn:hover::after {
+  opacity: 1;
+}
+main .btn-container__btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 25px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 300ms;
 }
 main .btn-container__btn--menu {
   width: 190px;
