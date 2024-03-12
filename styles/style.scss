@@ -137,7 +137,7 @@ main {
                 border-radius: 25px;
                 opacity: 0;
                 z-index: -1;
-                transition: opacity 300ms;
+                transition: opacity 300ms ease-out;
             }
 
             &--menu {
