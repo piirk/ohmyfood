@@ -246,8 +246,10 @@ main .menu__headline__title {
   font-family: "Shrikhand", sans-serif;
   font-weight: 400;
   font-size: 28px;
-  transform: skew(-13deg);
-  -webkit-transform: skew(-13deg);
+}
+main .menu__headline__favorite {
+  padding: 0 15px;
+  font-size: 24px;
 }
 main .menu__legend {
   float: left;

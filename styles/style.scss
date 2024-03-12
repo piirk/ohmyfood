@@ -271,9 +271,11 @@ main {
                 font-family: $title-font-family;
                 font-weight: 400;
                 font-size: 28px;
-                // font-style: italic; trop puissant donc :
-                transform: skew(-13deg);
-                -webkit-transform: skew(-13deg);
+            }
+
+            &__favorite {
+                padding: 0 15px;
+                font-size: 24px;
             }
         }
 
