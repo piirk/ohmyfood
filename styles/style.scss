@@ -5,6 +5,21 @@ $secondary-color: #ff79da;
 $tertiary-color: #99e2d0;
 $background-color: #f6f6f6;
 
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-col-center {
+    @include flex-col();
+    justify-content: center;
+}
+
+@mixin flex-col-center-center {
+    @include flex-col-center();
+    align-items: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -36,22 +51,17 @@ body {
 }
 
 header {
-    display: flex;
-    flex-direction: column;
+    @include flex-col();
 
     .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-col-center-center();
         height: 63px;
         background-color: #ffffff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
         z-index: 1;
     
         &__back-arrow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-col-center-center();
             position: absolute;
             top: 17px;
             left: 17px;
@@ -72,9 +82,7 @@ header {
     }
 
     .location {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-col-center-center();
         z-index: -1;
         height: 50px;
         background-color: #eaeaea;
@@ -92,20 +100,16 @@ header {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
+    @include flex-col();
 
     .info-group {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex-col-center();
         padding: 50px 30px;
         gap: 25px;
         text-align: center;
 
         &__headline {
-            display: flex;
-            flex-direction: column;
+            @include flex-col();
             gap: 10px;
         }
 
@@ -138,9 +142,7 @@ main {
     }
 
     .section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex-col-center();
         padding: 55px 20px 65px 20px;
         gap: 25px;
 
@@ -149,8 +151,7 @@ main {
         }
 
         .fonctionnement-list {
-            display: flex;
-            flex-direction: column;
+            @include flex-col();
             gap: 25px;
             // création d'un counter
             counter-reset: step;
@@ -195,8 +196,7 @@ main {
         }
 
         .cards {
-            display: flex;
-            flex-direction: column;
+            @include flex-col();
             gap: 18px;
 
             &--menu {
@@ -218,9 +218,7 @@ main {
                 }
 
                 &__badge-new {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    @include flex-col-center-center();
                     position: absolute;
                     top: 15px;
                     right: 15px;
@@ -244,14 +242,12 @@ main {
                 }
 
                 &__txt {
-                    display: flex;
-                    flex-direction: column;
+                    @include flex-col();
                     gap: 5px;
                 }
 
                 &__favorite {
-                    display: flex;
-                    align-items: center;
+                    @include flex-col-center-center();
                     font-size: 22px;
                 }
             }
@@ -273,9 +269,11 @@ main {
 
             &__title {
                 font-family: $title-font-family;
-                font-style: italic;
                 font-weight: 400;
                 font-size: 28px;
+                // font-style: italic; trop puissant donc :
+                transform: skew(-13deg);
+                -webkit-transform: skew(-13deg);
             }
         }
 
@@ -304,8 +302,7 @@ main {
 }
 
 .footer {
-    display: flex;
-    flex-direction: column;
+    @include flex-col();
     gap: 16px;
     padding: 22px 25px;
     background-color: #353535;
@@ -318,13 +315,11 @@ main {
     }
 
     &__links {
-        display: flex;
-        flex-direction: column;
+        @include flex-col();
         gap: 5px;
 
         &__primary, &__secondary {
-            display: flex;
-            flex-direction: column;
+            @include flex-col();
             gap: 5px;
         }
 

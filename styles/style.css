@@ -34,6 +34,7 @@ header {
 }
 header .header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 63px;
@@ -43,6 +44,7 @@ header .header {
 }
 header .header__back-arrow {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -62,6 +64,7 @@ header .header__logo {
 }
 header .location {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: -1;
@@ -192,6 +195,7 @@ main .section .cards .card__img {
 }
 main .section .cards .card__badge-new {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -220,6 +224,8 @@ main .section .cards .card__txt {
 }
 main .section .cards .card__favorite {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   font-size: 22px;
 }
@@ -238,9 +244,10 @@ main .menu__headline {
 }
 main .menu__headline__title {
   font-family: "Shrikhand", sans-serif;
-  font-style: italic;
   font-weight: 400;
   font-size: 28px;
+  transform: skew(-13deg);
+  -webkit-transform: skew(-13deg);
 }
 main .menu__legend {
   float: left;
