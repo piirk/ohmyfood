@@ -94,6 +94,11 @@ main .info-group__headline {
   flex-direction: column;
   gap: 10px;
 }
+main .info-group__btn-container {
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+}
 main .info-group__btn-explorer {
   height: 50px;
   padding: 0 19px;

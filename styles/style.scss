@@ -109,6 +109,11 @@ main {
             gap: 10px;
         }
 
+        &__btn-container {
+            width: max-content;
+            margin: auto;
+        }
+
         &__btn-explorer {
             height: 50px;
             padding: 0 19px;
