@@ -177,6 +177,7 @@ main .section .cards {
   gap: 18px;
 }
 main .section .cards--menu {
+  min-inline-size: auto;
   gap: 12px;
   border: none;
 }
@@ -187,6 +188,7 @@ main .section .cards .card {
   border-radius: 15px;
   background-color: #ffffff;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 main .section .cards .card__img {
   height: 171px;
@@ -219,6 +221,7 @@ main .section .cards .card__content {
   justify-content: space-between;
   flex: 1;
   padding: 16px 25px 16px 16px;
+  overflow: hidden;
 }
 main .section .cards .card__content--menu {
   padding: 12px 15px;
@@ -227,6 +230,8 @@ main .section .cards .card__txt {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  overflow: hidden;
+  margin-right: 12px;
 }
 main .section .cards .card__favorite {
   display: flex;
@@ -234,6 +239,11 @@ main .section .cards .card__favorite {
   justify-content: center;
   align-items: center;
   font-size: 22px;
+}
+main .section .cards .card__title, main .section .cards .card__subtitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 main .menu {
   background-color: #f6f6f6;

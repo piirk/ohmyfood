@@ -200,6 +200,8 @@ main {
             gap: 18px;
 
             &--menu {
+                // pour contrer le <fieldset>, pour tronquer les textes
+                min-inline-size: auto;
                 gap: 12px;
                 border: none;
             }
@@ -210,6 +212,7 @@ main {
                 border-radius: 15px;
                 background-color: #ffffff;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
 
                 &__img {
                     height: 171px;
@@ -241,6 +244,7 @@ main {
                     justify-content: space-between;
                     flex: 1;
                     padding: 16px 25px 16px 16px;
+                    overflow: hidden;
 
                     &--menu {
                         padding: 12px 15px;
@@ -250,11 +254,19 @@ main {
                 &__txt {
                     @include flex-col();
                     gap: 5px;
+                    overflow: hidden;
+                    margin-right: 12px;
                 }
 
                 &__favorite {
                     @include flex-col-center-center();
                     font-size: 22px;
+                }
+
+                &__title, &__subtitle {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
             }
         }
