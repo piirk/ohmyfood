@@ -1,0 +1,329 @@
+$main-font-family: 'Roboto', sans-serif;
+$title-font-family: 'Shrikhand', sans-serif;
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$tertiary-color: #99e2d0;
+$background-color: #f6f6f6;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $main-font-family;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+a, a:link, a:hover, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+body {
+    background-color: $background-color;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 63px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        z-index: 1;
+    
+        &__back-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 17px;
+            left: 17px;
+            width: 30px;
+            height: 30px;
+            font-size: 22px;
+            color: #353535;
+
+            &--hide {
+                display: none;
+            }
+        }
+
+        &__logo {
+            width: 197px;
+            height: 36px;
+        }
+    }
+
+    .location {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+        height: 50px;
+        background-color: #eaeaea;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        font-weight: 500;
+
+        &__icon {
+            margin-right: 17px;
+        }
+
+        &--hide {
+            display: none;
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    .info-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 30px;
+        gap: 25px;
+        text-align: center;
+
+        &__headline {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &__btn-explorer {
+            height: 50px;
+            padding: 0 19px;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(200.64deg, $primary-color -5.2%, $secondary-color 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+    
+    .restaurant-image {
+        display: flex;
+        height: 275px;
+        margin-bottom: -40px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 55px 20px 65px 20px;
+        gap: 25px;
+
+        &--white {
+            background-color: #ffffff;
+        }
+
+        .fonctionnement-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            counter-reset: step;
+
+            &__step {
+                display: flex;
+                align-items: center;
+                position: relative;
+                height: 73px;
+                margin-left: 13px;
+                padding: 0 33px;
+                border-radius: 20px;
+                background-color: $background-color;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+                font-weight: 500;
+
+                &::before {
+                    counter-increment: step;
+                    content: counter(step);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    left: -13px;
+                    width: 24px;
+                    height: 24px;
+                    background-color: $primary-color;
+                    color: #ffffff;
+                    border-radius: 12px;
+
+                }
+            }
+
+            &__step-icon {
+                color: #7e7e7e;
+                margin-right: 20px;
+
+                &--primary-color {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            &--menu {
+                gap: 12px;
+                border: none;
+            }
+
+            .card {
+                position: relative;
+                border-radius: 15px;
+                background-color: #ffffff;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+                &__img {
+                    height: 171px;
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 15px 15px 0 0;
+                }
+
+                &__badge-new {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    width: 80px;
+                    height: 29px;
+                    border-radius: 2px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+                    background-color: $tertiary-color;
+                    color: #008766;
+                    font-size: 14px;
+
+                    &--hide {
+                        display: none;
+                    }
+                }
+
+                &__content {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 16px 25px 16px 16px;
+                }
+
+                &__txt {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                }
+
+                &__favorite {
+                    display: flex;
+                    align-items: center;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+    .menu {
+        background-color: $background-color;
+        padding: 32px 13px 40px 13px;
+        gap: 40px;
+        border-radius: 20px 20px 0 0;
+
+        &__headline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4px;
+            color: #101010;
+
+            &__title {
+                font-family: $title-font-family;
+                font-style: italic;
+                font-weight: 400;
+                font-size: 28px;
+            }
+        }
+
+        &__legend {
+            float: left;
+            position: relative;
+            z-index: 1;
+            height: 27px;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 300;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 1px;
+                width: 40px;
+                border-bottom: 3px solid $tertiary-color;
+            }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 25px;
+    background-color: #353535;
+    color: #ffffff;
+
+    &__logo {
+        width: 110px;
+        height: 21px;
+        filter: invert(92%) sepia(93%) saturate(32%) hue-rotate(195deg) brightness(108%) contrast(100%);
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &__primary, &__secondary {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        &__primary {
+            font-weight: 500;
+
+            &__icon {
+                width: 12px;
+                font-size: 13px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
