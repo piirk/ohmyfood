@@ -131,6 +131,10 @@ main {
         display: flex;
         height: 275px;
         margin-bottom: -40px;
+
+        img {
+            object-fit: cover;
+        }
     }
 
     .section {
@@ -148,6 +152,7 @@ main {
             display: flex;
             flex-direction: column;
             gap: 25px;
+            // création d'un counter
             counter-reset: step;
 
             &__step {
@@ -162,6 +167,7 @@ main {
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
                 font-weight: 500;
 
+                // pour afficher counter et le ++
                 &::before {
                     counter-increment: step;
                     content: counter(step);
@@ -175,7 +181,6 @@ main {
                     background-color: $primary-color;
                     color: #ffffff;
                     border-radius: 12px;
-
                 }
             }
 
@@ -275,6 +280,7 @@ main {
         }
 
         &__legend {
+            // float: left; pour sortir <legend> du <fieldset>
             float: left;
             position: relative;
             z-index: 1;
@@ -283,6 +289,7 @@ main {
             font-size: 16px;
             font-weight: 300;
 
+            // pour afficher la bordure sous le <legend>
             &::before {
                 content: "";
                 position: absolute;

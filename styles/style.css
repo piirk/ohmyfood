@@ -115,6 +115,10 @@ main .restaurant-image {
   height: 275px;
   margin-bottom: -40px;
 }
+main .restaurant-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 main .section {
   display: flex;
   flex-direction: column;
