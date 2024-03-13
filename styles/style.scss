@@ -408,7 +408,7 @@ main {
         }
 
         // pourquoi ici "&__" ne fonctionne pas pour ".menu" ?
-        .card input:hover + .menu__checkmark {
+        .card input:hover + .menu__checkmark, .card input:checked + .menu__checkmark {
             width: 60px;
             margin-right: 0px;
             transform-origin: right 50%;
