@@ -80,16 +80,16 @@ header .location--hide {
   display: none;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-}
-main .btn-container {
+.btn-container {
   width: -moz-max-content;
   width: max-content;
   margin: auto;
 }
-main .btn-container__btn {
+.btn-container a, .btn-container__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: 1;
   height: 50px;
@@ -102,10 +102,13 @@ main .btn-container__btn {
   font-weight: 500;
   cursor: pointer;
 }
-main .btn-container__btn:hover::after {
+.btn-container a--menu, .btn-container__btn--menu {
+  width: 180px;
+}
+.btn-container a:hover::after, .btn-container__btn:hover::after {
   opacity: 1;
 }
-main .btn-container__btn::after {
+.btn-container a::after, .btn-container__btn::after {
   content: "";
   position: absolute;
   top: 0;
@@ -119,8 +122,10 @@ main .btn-container__btn::after {
   z-index: -1;
   transition: opacity 300ms ease-out;
 }
-main .btn-container__btn--menu {
-  width: 190px;
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 main .favorite {
   display: flex;
@@ -362,7 +367,13 @@ main .menu__checkmark {
   transform-origin: right 50%;
   transition: margin-right 300ms ease-in-out;
 }
-main .menu .card input:hover + .menu__checkmark, main .menu .card input:checked + .menu__checkmark {
+main .menu .card input:hover {
+  width: 60px;
+  margin-right: 0px;
+  transform-origin: right 50%;
+  transition: margin-right 200ms ease-in-out;
+}
+main .menu .card input:hover + .menu__checkmark {
   width: 60px;
   margin-right: 0px;
   transform-origin: right 50%;

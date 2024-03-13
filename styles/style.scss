@@ -99,52 +99,53 @@ header {
     }
 }
 
-main {
-    @include flex-col();
+.btn-container {
+    width: max-content;
+    margin: auto;
 
-    .btn-container {
-        width: max-content;
-        margin: auto;
+    a, &__btn {
+        @include flex-col-center-center();
+        position: relative;
+        z-index: 1;
+        height: 50px;
+        padding: 0 19px;
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+        font-weight: 500;
+        cursor: pointer;
 
-        &__btn {
-            position: relative;
-            z-index: 1;
-            height: 50px;
-            padding: 0 19px;
-            color: #ffffff;
-            border: none;
-            border-radius: 25px;
-            background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            font-weight: 500;
-            cursor: pointer;
+        &--menu {
+            width: 180px;
+        }
 
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-            }
-
+        &:hover {
             &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background: linear-gradient(200.64deg, $primary-color -5.2%, $secondary-color 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-                border-radius: 25px;
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 300ms ease-out;
-            }
-
-            &--menu {
-                width: 190px;
+                opacity: 1;
             }
         }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(200.64deg, $primary-color -5.2%, $secondary-color 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            border-radius: 25px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 300ms ease-out;
+        }
     }
+}
+
+main {
+    @include flex-col();
 
     .favorite {
         @include flex-col-center-center();
@@ -407,12 +408,18 @@ main {
             transition: margin-right 300ms ease-in-out;
         }
 
-        // pourquoi ici "&__" ne fonctionne pas pour ".menu" ?
-        .card input:hover + .menu__checkmark, .card input:checked + .menu__checkmark {
+        .card input:hover {
             width: 60px;
             margin-right: 0px;
             transform-origin: right 50%;
             transition: margin-right 200ms ease-in-out;
+            
+            & + .menu__checkmark {
+                width: 60px;
+                margin-right: 0px;
+                transform-origin: right 50%;
+                transition: margin-right 200ms ease-in-out;
+            }
         }
 
         &__price {
