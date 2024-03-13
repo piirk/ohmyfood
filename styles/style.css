@@ -130,6 +130,7 @@ main .favorite {
   position: relative;
   width: 22px;
   font-size: 22px;
+  cursor: pointer;
 }
 main .favorite .fa-heart {
   position: absolute;
@@ -138,7 +139,7 @@ main .favorite__unliked {
   transition: opacity 300ms;
   opacity: 1;
 }
-main .favorite__liked {
+main .favorite .favorite__liked {
   transition: opacity 300ms;
   opacity: 0;
   background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
@@ -146,11 +147,11 @@ main .favorite__liked {
           background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-main .favorite:hover__unliked {
+main .favorite:hover .favorite__unliked {
   transition: opacity 300ms;
   opacity: 0;
 }
-main .favorite:hover__liked {
+main .favorite:hover .favorite__liked {
   transition: opacity 300ms;
   opacity: 1;
 }
@@ -351,16 +352,21 @@ main .menu__checkmark {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: none;
-  width: 0;
+  background-color: #99e2d0;
+  width: 60px;
+  margin-right: -60px;
+  display: flex;
   font-size: 24px;
   color: #ffffff;
   border-radius: 0 15px 15px 0;
+  transform-origin: right 50%;
+  transition: margin-right 300ms ease-in-out;
 }
-main .menu .card input:checked + .menu__checkmark {
-  display: flex;
-  background-color: #99e2d0;
+main .menu .card input:hover + .menu__checkmark {
   width: 60px;
+  margin-right: 0px;
+  transform-origin: right 50%;
+  transition: margin-right 200ms ease-in-out;
 }
 main .menu__price {
   display: flex;
