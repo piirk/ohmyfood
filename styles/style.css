@@ -359,17 +359,11 @@ main .menu__checkmark {
   transform-origin: right 50%;
   transition: margin-right 300ms ease-in-out;
 }
-main .menu .card input:hover {
-  width: 60px;
-  margin-right: 0px;
-  transform-origin: right 50%;
-  transition: margin-right 200ms ease-in-out;
-}
 main .menu .card input:hover + .menu__checkmark {
   width: 60px;
   margin-right: 0px;
   transform-origin: right 50%;
-  transition: margin-right 200ms ease-in-out;
+  transition: margin-right 150ms ease-in-out;
 }
 main .menu__price {
   display: flex;
