@@ -1,49 +1,4 @@
-$main-font-family: 'Roboto', sans-serif;
-$title-font-family: 'Shrikhand', sans-serif;
-$primary-color: #9356dc;
-$secondary-color: #ff79da;
-$tertiary-color: #99e2d0;
-$background-color: #f6f6f6;
-
-@mixin flex-col {
-    display: flex;
-    flex-direction: column;
-}
-
-@mixin flex-col-center {
-    @include flex-col();
-    justify-content: center;
-}
-
-@mixin flex-col-center-center {
-    @include flex-col-center();
-    align-items: center;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $main-font-family;
-}
-
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-}
-
-a, a:link, a:hover, a:visited, a:active {
-    color: inherit;
-    text-decoration: none;
-}
-
-input, button, textarea, select {
-    font: inherit;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-}
+@import 'base', 'mixins', 'variables';
 
 body {
     background-color: $background-color;
@@ -51,51 +6,45 @@ body {
 }
 
 header {
-    @include flex-col();
+    @include flex-col-center-center();
+    height: 63px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 
-    .header {
+    .back-arrow {
         @include flex-col-center-center();
-        height: 63px;
-        background-color: #ffffff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-        z-index: 1;
-    
-        &__back-arrow {
-            @include flex-col-center-center();
-            position: absolute;
-            top: 17px;
-            left: 17px;
-            width: 30px;
-            height: 30px;
-            font-size: 22px;
-            color: #353535;
-
-            &--hide {
-                display: none;
-            }
-        }
-
-        &__logo {
-            width: 197px;
-            height: 36px;
-        }
-    }
-
-    .location {
-        @include flex-col-center-center();
-        z-index: -1;
-        height: 50px;
-        background-color: #eaeaea;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        font-weight: 500;
-
-        &__icon {
-            margin-right: 17px;
-        }
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+        color: #353535;
 
         &--hide {
             display: none;
         }
+    }
+
+    .logo {
+        width: 197px;
+        height: 36px;
+    }
+}
+
+.location {
+    @include flex-col-center-center();
+    height: 50px;
+    background-color: #eaeaea;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 500;
+
+    &__icon {
+        margin-right: 17px;
+    }
+
+    &--hide {
+        display: none;
     }
 }
 

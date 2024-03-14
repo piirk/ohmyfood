@@ -31,10 +31,6 @@ body {
 header {
   display: flex;
   flex-direction: column;
-}
-header .header {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 63px;
@@ -42,7 +38,7 @@ header .header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
-header .header__back-arrow {
+header .back-arrow {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,14 +51,15 @@ header .header__back-arrow {
   font-size: 22px;
   color: #353535;
 }
-header .header__back-arrow--hide {
+header .back-arrow--hide {
   display: none;
 }
-header .header__logo {
+header .logo {
   width: 197px;
   height: 36px;
 }
-header .location {
+
+.location {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,10 +70,10 @@ header .location {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 500;
 }
-header .location__icon {
+.location__icon {
   margin-right: 17px;
 }
-header .location--hide {
+.location--hide {
   display: none;
 }
 
