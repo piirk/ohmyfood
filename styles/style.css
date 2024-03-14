@@ -36,7 +36,6 @@ header {
   height: 63px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  z-index: 1;
 }
 header .back-arrow {
   display: flex;
@@ -64,7 +63,6 @@ header .logo {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: -1;
   height: 50px;
   background-color: #eaeaea;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -72,9 +70,6 @@ header .logo {
 }
 .location__icon {
   margin-right: 17px;
-}
-.location--hide {
-  display: none;
 }
 
 .btn-container {
