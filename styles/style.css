@@ -461,6 +461,22 @@ main {
   background-color: #353535;
   color: #ffffff;
 }
+@media screen and (min-width: 768px) {
+  .footer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 60px;
+    height: 114px;
+  }
+}
 .footer__logo {
   width: 110px;
   height: 21px;
@@ -472,8 +488,19 @@ main {
   gap: 5px;
   list-style-type: none;
 }
+@media screen and (min-width: 1024px) {
+  .footer__links {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
 .footer__links__primary {
   font-weight: 500;
+}
+@media screen and (min-width: 1024px) {
+  .footer__links__primary {
+    width: 200px;
+  }
 }
 .footer__links__primary__icon {
   width: 12px;
