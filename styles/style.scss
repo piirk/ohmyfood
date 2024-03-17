@@ -13,6 +13,10 @@ header {
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 
+    @include tablet {
+        height: 96px;
+    }
+
     .back-arrow {
         @include flex-col-center-center();
         position: absolute;
@@ -25,6 +29,10 @@ header {
 
         &--hide {
             display: none;
+        }
+
+        @include tablet {
+            top: 33px;
         }
     }
 
@@ -61,10 +69,15 @@ main {
 }
 
 .info-group {
-    @include flex-col-center();
+    @include flex-col-center-center();
     padding: 50px 30px;
     gap: 25px;
     text-align: center;
+
+    @include tablet {
+        max-width: 634px;
+        margin: auto;
+    }
 
     &__headline {
         @include flex-col();
