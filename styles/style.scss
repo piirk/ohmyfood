@@ -7,6 +7,8 @@ body {
 
 header {
     @include flex-col-center-center();
+    position: relative;
+    z-index: 1;
     height: 63px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -91,282 +93,282 @@ header {
 
 main {
     @include flex-col();
+}
 
-    .favorite {
-        @include flex-col-center-center();
-        position: relative;
-        width: 22px;
-        font-size: 22px;
-        cursor: pointer;
+.favorite {
+    @include flex-col-center-center();
+    position: relative;
+    width: 22px;
+    font-size: 22px;
+    cursor: pointer;
 
-        .fa-heart {
-            position: absolute;
-        }
+    .fa-heart {
+        position: absolute;
+    }
 
-        &__unliked {
+    &__unliked {
+        transition: opacity 300ms;
+        opacity: 1;
+    }
+
+    .favorite__liked {
+        transition: opacity 300ms;
+        opacity: 0;
+        background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &:hover {
+        .favorite__unliked {
             transition: opacity 300ms;
-            opacity: 1;
+            opacity: 0;
         }
 
         .favorite__liked {
             transition: opacity 300ms;
-            opacity: 0;
-            background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            opacity: 1;
+        }
+    }
+}
+
+.info-group {
+    @include flex-col-center();
+    padding: 50px 30px;
+    gap: 25px;
+    text-align: center;
+
+    &__headline {
+        @include flex-col();
+        gap: 10px;
+    }
+}
+
+.restaurant-image {
+    display: flex;
+    height: 275px;
+    margin-bottom: -40px;
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.section {
+    @include flex-col-center();
+    padding: 55px 20px 65px 20px;
+    gap: 25px;
+
+    &--white {
+        background-color: #ffffff;
+    }
+
+    .fonctionnement-list {
+        @include flex-col();
+        gap: 25px;
+        // création d'un counter
+        counter-reset: step;
+
+        &__step {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 73px;
+            margin-left: 13px;
+            padding: 0 33px;
+            border-radius: 20px;
+            background-color: $background-color;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            font-weight: 500;
+
+            // pour afficher counter et le ++
+            &::before {
+                counter-increment: step;
+                content: counter(step);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: -13px;
+                width: 24px;
+                height: 24px;
+                background-color: $primary-color;
+                color: #ffffff;
+                border-radius: 12px;
+            }
         }
 
-        &:hover {
-            .favorite__unliked {
-                transition: opacity 300ms;
-                opacity: 0;
-            }
+        &__step-icon {
+            color: #7e7e7e;
+            margin-right: 20px;
 
-            .favorite__liked {
-                transition: opacity 300ms;
-                opacity: 1;
+            &--primary-color {
+                color: $primary-color;
             }
         }
     }
 
-    .info-group {
-        @include flex-col-center();
-        padding: 50px 30px;
-        gap: 25px;
-        text-align: center;
+    .cards {
+        @include flex-col();
+        gap: 18px;
 
-        &__headline {
+        &--menu {
+            // pour contrer le <fieldset>, pour tronquer les textes
+            min-inline-size: auto;
+            gap: 12px;
+            border: none;
+        }
+
+        .card {
             @include flex-col();
-            gap: 10px;
+            position: relative;
+            border-radius: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+
+            &__img {
+                height: 171px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 15px 15px 0 0;
+            }
+
+            &__badge-new {
+                @include flex-col-center-center();
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 80px;
+                height: 29px;
+                border-radius: 2px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+                background-color: $tertiary-color;
+                color: #008766;
+                font-size: 14px;
+
+                &--hide {
+                    display: none;
+                }
+            }
+
+            &__content {
+                display: flex;
+                justify-content: space-between;
+                flex: 1;
+                padding: 16px 25px 16px 16px;
+                overflow: hidden;
+
+                &--menu {
+                    padding: 12px 15px;
+                }
+            }
+
+            &__txt {
+                @include flex-col();
+                gap: 5px;
+                overflow: hidden;
+                margin-right: 12px;
+            }
+
+            &__title, &__subtitle {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+.menu {
+    background-color: $background-color;
+    padding: 32px 13px 40px 13px;
+    gap: 40px;
+    border-radius: 20px 20px 0 0;
+
+    &__headline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4px;
+        color: #101010;
+
+        &__title {
+            font-family: $title-font-family;
+            font-weight: 400;
+            font-size: 28px;
+        }
+
+        &__favorite {
+            padding: 0 15px;
+            width: 24px;
+            font-size: 24px;
+        }
+    }
+
+    &__legend {
+        // float: left; pour sortir <legend> du <fieldset>
+        float: left;
+        position: relative;
+        z-index: 1;
+        height: 27px;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 300;
+
+        // pour afficher la bordure sous le <legend>
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 40px;
+            border-bottom: 3px solid $tertiary-color;
         }
     }
     
-    .restaurant-image {
+    .cards .card {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .card input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    &__checkmark {
+        @include flex-col-center-center();
+        background-color: $tertiary-color;
+        width: 60px;
+        margin-right: -60px;
         display: flex;
-        height: 275px;
-        margin-bottom: -40px;
-
-        img {
-            object-fit: cover;
-        }
+        font-size: 24px;
+        color: #ffffff;
+        border-radius: 0 15px 15px 0;
+        transform-origin: right 50%;
+        transition: margin-right 300ms ease-in-out;
     }
 
-    .section {
-        @include flex-col-center();
-        padding: 55px 20px 65px 20px;
-        gap: 25px;
-
-        &--white {
-            background-color: #ffffff;
-        }
-
-        .fonctionnement-list {
-            @include flex-col();
-            gap: 25px;
-            // création d'un counter
-            counter-reset: step;
-
-            &__step {
-                display: flex;
-                align-items: center;
-                position: relative;
-                height: 73px;
-                margin-left: 13px;
-                padding: 0 33px;
-                border-radius: 20px;
-                background-color: $background-color;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-                font-weight: 500;
-
-                // pour afficher counter et le ++
-                &::before {
-                    counter-increment: step;
-                    content: counter(step);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: absolute;
-                    left: -13px;
-                    width: 24px;
-                    height: 24px;
-                    background-color: $primary-color;
-                    color: #ffffff;
-                    border-radius: 12px;
-                }
-            }
-
-            &__step-icon {
-                color: #7e7e7e;
-                margin-right: 20px;
-
-                &--primary-color {
-                    color: $primary-color;
-                }
-            }
-        }
-
-        .cards {
-            @include flex-col();
-            gap: 18px;
-
-            &--menu {
-                // pour contrer le <fieldset>, pour tronquer les textes
-                min-inline-size: auto;
-                gap: 12px;
-                border: none;
-            }
-
-            .card {
-                @include flex-col();
-                position: relative;
-                border-radius: 15px;
-                background-color: #ffffff;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-
-                &__img {
-                    height: 171px;
-                    width: 100%;
-                    object-fit: cover;
-                    border-radius: 15px 15px 0 0;
-                }
-
-                &__badge-new {
-                    @include flex-col-center-center();
-                    position: absolute;
-                    top: 15px;
-                    right: 15px;
-                    width: 80px;
-                    height: 29px;
-                    border-radius: 2px;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-                    background-color: $tertiary-color;
-                    color: #008766;
-                    font-size: 14px;
-
-                    &--hide {
-                        display: none;
-                    }
-                }
-
-                &__content {
-                    display: flex;
-                    justify-content: space-between;
-                    flex: 1;
-                    padding: 16px 25px 16px 16px;
-                    overflow: hidden;
-
-                    &--menu {
-                        padding: 12px 15px;
-                    }
-                }
-
-                &__txt {
-                    @include flex-col();
-                    gap: 5px;
-                    overflow: hidden;
-                    margin-right: 12px;
-                }
-
-                &__title, &__subtitle {
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                }
-            }
-        }
-    }
-
-    .menu {
-        background-color: $background-color;
-        padding: 32px 13px 40px 13px;
-        gap: 40px;
-        border-radius: 20px 20px 0 0;
-
-        &__headline {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 4px;
-            color: #101010;
-
-            &__title {
-                font-family: $title-font-family;
-                font-weight: 400;
-                font-size: 28px;
-            }
-
-            &__favorite {
-                padding: 0 15px;
-                width: 24px;
-                font-size: 24px;
-            }
-        }
-
-        &__legend {
-            // float: left; pour sortir <legend> du <fieldset>
-            float: left;
-            position: relative;
-            z-index: 1;
-            height: 27px;
-            text-transform: uppercase;
-            font-size: 16px;
-            font-weight: 300;
-
-            // pour afficher la bordure sous le <legend>
-            &::before {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 1px;
-                width: 40px;
-                border-bottom: 3px solid $tertiary-color;
-            }
-        }
-        
-        .cards .card {
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .card input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
-        }
-
-        &__checkmark {
-            @include flex-col-center-center();
-            background-color: $tertiary-color;
+    .card input:hover {
+        & + .menu__checkmark {
             width: 60px;
-            margin-right: -60px;
-            display: flex;
-            font-size: 24px;
-            color: #ffffff;
-            border-radius: 0 15px 15px 0;
+            margin-right: 0px;
             transform-origin: right 50%;
-            transition: margin-right 300ms ease-in-out;
+            transition: margin-right 150ms ease-in-out;
         }
+    }
 
-        .card input:hover {
-            & + .menu__checkmark {
-                width: 60px;
-                margin-right: 0px;
-                transform-origin: right 50%;
-                transition: margin-right 150ms ease-in-out;
-            }
-        }
-
-        &__price {
-            display: flex;
-            align-items: flex-end;
-            font-weight: 700;
-        }
+    &__price {
+        display: flex;
+        align-items: flex-end;
+        font-weight: 700;
     }
 }
 
