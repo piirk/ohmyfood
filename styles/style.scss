@@ -46,6 +46,32 @@ header {
     }
 }
 
+main {
+    @include flex-col();
+}
+
+.container {
+    @include flex-col-center();
+    padding: 55px 20px 65px 20px;
+    gap: 25px;
+
+    &--white {
+        background-color: #ffffff;
+    }
+}
+
+.info-group {
+    @include flex-col-center();
+    padding: 50px 30px;
+    gap: 25px;
+    text-align: center;
+
+    &__headline {
+        @include flex-col();
+        gap: 10px;
+    }
+}
+
 .btn-container {
     width: max-content;
     margin: auto;
@@ -91,10 +117,6 @@ header {
     }
 }
 
-main {
-    @include flex-col();
-}
-
 .favorite {
     @include flex-col-center-center();
     position: relative;
@@ -132,18 +154,6 @@ main {
     }
 }
 
-.info-group {
-    @include flex-col-center();
-    padding: 50px 30px;
-    gap: 25px;
-    text-align: center;
-
-    &__headline {
-        @include flex-col();
-        gap: 10px;
-    }
-}
-
 .restaurant-image {
     display: flex;
     height: 275px;
@@ -151,128 +161,118 @@ main {
     object-fit: cover;
 }
 
-.section {
-    @include flex-col-center();
-    padding: 55px 20px 65px 20px;
+.fonctionnement-list {
+    @include flex-col();
     gap: 25px;
+    // création d'un counter
+    counter-reset: step;
 
-    &--white {
-        background-color: #ffffff;
-    }
+    &__step {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 73px;
+        margin-left: 13px;
+        padding: 0 33px;
+        border-radius: 20px;
+        background-color: $background-color;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        font-weight: 500;
 
-    .fonctionnement-list {
-        @include flex-col();
-        gap: 25px;
-        // création d'un counter
-        counter-reset: step;
-
-        &__step {
+        // pour afficher counter et le ++
+        &::before {
+            counter-increment: step;
+            content: counter(step);
             display: flex;
+            justify-content: center;
             align-items: center;
-            position: relative;
-            height: 73px;
-            margin-left: 13px;
-            padding: 0 33px;
-            border-radius: 20px;
-            background-color: $background-color;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            font-weight: 500;
-
-            // pour afficher counter et le ++
-            &::before {
-                counter-increment: step;
-                content: counter(step);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                left: -13px;
-                width: 24px;
-                height: 24px;
-                background-color: $primary-color;
-                color: #ffffff;
-                border-radius: 12px;
-            }
-        }
-
-        &__step-icon {
-            color: #7e7e7e;
-            margin-right: 20px;
-
-            &--primary-color {
-                color: $primary-color;
-            }
+            position: absolute;
+            left: -13px;
+            width: 24px;
+            height: 24px;
+            background-color: $primary-color;
+            color: #ffffff;
+            border-radius: 12px;
         }
     }
 
-    .cards {
-        @include flex-col();
-        gap: 18px;
+    &__step-icon {
+        color: #7e7e7e;
+        margin-right: 20px;
 
-        &--menu {
-            // pour contrer le <fieldset>, pour tronquer les textes
-            min-inline-size: auto;
-            gap: 12px;
-            border: none;
+        &--primary-color {
+            color: $primary-color;
+        }
+    }
+}
+
+.cards {
+    @include flex-col();
+    gap: 18px;
+
+    &--menu {
+        // pour contrer le <fieldset>, pour tronquer les textes
+        min-inline-size: auto;
+        gap: 12px;
+        border: none;
+    }
+
+    .card {
+        @include flex-col();
+        position: relative;
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        &__img {
+            height: 171px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
         }
 
-        .card {
-            @include flex-col();
-            position: relative;
-            border-radius: 15px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        &__badge-new {
+            @include flex-col-center-center();
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 80px;
+            height: 29px;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            background-color: $tertiary-color;
+            color: #008766;
+            font-size: 14px;
+
+            &--hide {
+                display: none;
+            }
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            padding: 16px 25px 16px 16px;
             overflow: hidden;
 
-            &__img {
-                height: 171px;
-                width: 100%;
-                object-fit: cover;
-                border-radius: 15px 15px 0 0;
+            &--menu {
+                padding: 12px 15px;
             }
+        }
 
-            &__badge-new {
-                @include flex-col-center-center();
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                width: 80px;
-                height: 29px;
-                border-radius: 2px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-                background-color: $tertiary-color;
-                color: #008766;
-                font-size: 14px;
+        &__txt {
+            @include flex-col();
+            gap: 5px;
+            overflow: hidden;
+            margin-right: 12px;
+        }
 
-                &--hide {
-                    display: none;
-                }
-            }
-
-            &__content {
-                display: flex;
-                justify-content: space-between;
-                flex: 1;
-                padding: 16px 25px 16px 16px;
-                overflow: hidden;
-
-                &--menu {
-                    padding: 12px 15px;
-                }
-            }
-
-            &__txt {
-                @include flex-col();
-                gap: 5px;
-                overflow: hidden;
-                margin-right: 12px;
-            }
-
-            &__title, &__subtitle {
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
+        &__title, &__subtitle {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
     }
 }

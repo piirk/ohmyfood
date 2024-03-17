@@ -74,6 +74,36 @@ header .logo {
   margin-right: 17px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px 20px 65px 20px;
+  gap: 25px;
+}
+.container--white {
+  background-color: #ffffff;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 30px;
+  gap: 25px;
+  text-align: center;
+}
+.info-group__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .btn-container {
   width: -moz-max-content;
   width: max-content;
@@ -117,11 +147,6 @@ header .logo {
   transition: opacity 300ms ease-out;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-}
-
 .favorite {
   display: flex;
   flex-direction: column;
@@ -156,20 +181,6 @@ main {
   opacity: 1;
 }
 
-.info-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 50px 30px;
-  gap: 25px;
-  text-align: center;
-}
-.info-group__headline {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .restaurant-image {
   display: flex;
   height: 275px;
@@ -178,23 +189,13 @@ main {
      object-fit: cover;
 }
 
-.section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 55px 20px 65px 20px;
-  gap: 25px;
-}
-.section--white {
-  background-color: #ffffff;
-}
-.section .fonctionnement-list {
+.fonctionnement-list {
   display: flex;
   flex-direction: column;
   gap: 25px;
   counter-reset: step;
 }
-.section .fonctionnement-list__step {
+.fonctionnement-list__step {
   display: flex;
   align-items: center;
   position: relative;
@@ -206,7 +207,7 @@ main {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   font-weight: 500;
 }
-.section .fonctionnement-list__step::before {
+.fonctionnement-list__step::before {
   counter-increment: step;
   content: counter(step);
   display: flex;
@@ -220,24 +221,25 @@ main {
   color: #ffffff;
   border-radius: 12px;
 }
-.section .fonctionnement-list__step-icon {
+.fonctionnement-list__step-icon {
   color: #7e7e7e;
   margin-right: 20px;
 }
-.section .fonctionnement-list__step-icon--primary-color {
+.fonctionnement-list__step-icon--primary-color {
   color: #9356dc;
 }
-.section .cards {
+
+.cards {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-.section .cards--menu {
+.cards--menu {
   min-inline-size: auto;
   gap: 12px;
   border: none;
 }
-.section .cards .card {
+.cards .card {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -246,14 +248,14 @@ main {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-.section .cards .card__img {
+.cards .card__img {
   height: 171px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
-.section .cards .card__badge-new {
+.cards .card__badge-new {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -269,27 +271,27 @@ main {
   color: #008766;
   font-size: 14px;
 }
-.section .cards .card__badge-new--hide {
+.cards .card__badge-new--hide {
   display: none;
 }
-.section .cards .card__content {
+.cards .card__content {
   display: flex;
   justify-content: space-between;
   flex: 1;
   padding: 16px 25px 16px 16px;
   overflow: hidden;
 }
-.section .cards .card__content--menu {
+.cards .card__content--menu {
   padding: 12px 15px;
 }
-.section .cards .card__txt {
+.cards .card__txt {
   display: flex;
   flex-direction: column;
   gap: 5px;
   overflow: hidden;
   margin-right: 12px;
 }
-.section .cards .card__title, .section .cards .card__subtitle {
+.cards .card__title, .cards .card__subtitle {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
