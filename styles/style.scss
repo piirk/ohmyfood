@@ -274,6 +274,11 @@ main {
             white-space: nowrap;
             text-overflow: ellipsis;
         }
+
+        &__title {
+            font-size: 1.17em;
+            font-weight: 700;
+        }
     }
 }
 
@@ -366,6 +371,10 @@ main {
         display: flex;
         align-items: flex-end;
         font-weight: 700;
+
+        dd {
+            display: none;
+        }
     }
 }
 

@@ -296,6 +296,10 @@ main {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.cards .card__title {
+  font-size: 1.17em;
+  font-weight: 700;
+}
 
 .menu {
   background-color: #f6f6f6;
@@ -376,6 +380,9 @@ main {
   display: flex;
   align-items: flex-end;
   font-weight: 700;
+}
+.menu__price dd {
+  display: none;
 }
 
 .footer {
