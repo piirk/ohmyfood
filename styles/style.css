@@ -89,6 +89,10 @@ main {
   flex-direction: column;
 }
 
+.background-container--white {
+  background-color: #ffffff;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -96,8 +100,16 @@ main {
   padding: 55px 20px 65px 20px;
   gap: 25px;
 }
-.container--white {
-  background-color: #ffffff;
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 55px 35px 65px 35px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 1024px;
+    margin: 0 auto;
+  }
 }
 
 .info-group {
@@ -112,7 +124,7 @@ main {
 @media screen and (min-width: 768px) {
   .info-group {
     max-width: 634px;
-    margin: auto;
+    margin: 0 auto;
   }
 }
 .info-group__headline {
@@ -205,12 +217,33 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media screen and (min-width: 768px) {
+  .restaurant-image {
+    height: 383px;
+  }
+}
 
 .fonctionnement-list {
   display: flex;
   flex-direction: column;
   gap: 25px;
   counter-reset: step;
+}
+@media screen and (min-width: 768px) {
+  .fonctionnement-list {
+    width: 450px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement-list {
+    flex-direction: row;
+    width: auto;
+    margin: 0;
+  }
+  .fonctionnement-list__step {
+    width: 100%;
+  }
 }
 .fonctionnement-list__step {
   display: flex;
@@ -256,9 +289,22 @@ main {
   gap: 12px;
   border: none;
 }
+@media screen and (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px 50px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cards {
+    gap: 50px 100px;
+  }
+}
 .cards .card {
   display: flex;
   flex-direction: column;
+  flex: 1 0 40%;
   position: relative;
   border-radius: 15px;
   background-color: #ffffff;
@@ -316,6 +362,11 @@ main {
 .cards .card__title {
   font-size: 1.17em;
   font-weight: 700;
+}
+.cards article, .cards figure {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .menu {

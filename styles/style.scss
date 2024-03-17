@@ -58,13 +58,24 @@ main {
     @include flex-col();
 }
 
+.background-container {
+    &--white {
+        background-color: #ffffff;
+    }
+}
+
 .container {
     @include flex-col-center();
     padding: 55px 20px 65px 20px;
     gap: 25px;
 
-    &--white {
-        background-color: #ffffff;
+    @include tablet {
+        padding: 55px 35px 65px 35px;
+    }
+
+    @include desktop {
+        width: 1024px;
+        margin: 0 auto;
     }
 }
 
@@ -76,7 +87,7 @@ main {
 
     @include tablet {
         max-width: 634px;
-        margin: auto;
+        margin: 0 auto;
     }
 
     &__headline {
@@ -172,6 +183,10 @@ main {
     height: 275px;
     margin-bottom: -40px;
     object-fit: cover;
+
+    @include tablet {
+        height: 383px;
+    }
 }
 
 .fonctionnement-list {
@@ -179,6 +194,20 @@ main {
     gap: 25px;
     // création d'un counter
     counter-reset: step;
+
+    @include tablet {
+        width: 450px;
+        margin: 0 auto;
+    }
+    @include desktop {
+        flex-direction: row;
+        width: auto;
+        margin: 0;
+
+        &__step {
+            width: 100%;
+        }
+    }
 
     &__step {
         display: flex;
@@ -230,8 +259,19 @@ main {
         border: none;
     }
 
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px 50px;
+    }
+
+    @include desktop {
+        gap: 50px 100px;
+    }
+
     .card {
         @include flex-col();
+        flex: 1 0 40%;
         position: relative;
         border-radius: 15px;
         background-color: #ffffff;
@@ -292,6 +332,11 @@ main {
             font-size: 1.17em;
             font-weight: 700;
         }
+    }
+
+    & article, & figure {
+        @include flex-col();
+        flex: 1;
     }
 }
 
