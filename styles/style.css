@@ -402,11 +402,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
-.footer__links__primary, .footer__links__secondary {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  list-style-type: none;
 }
 .footer__links__primary {
   font-weight: 500;

@@ -394,11 +394,7 @@ main {
     &__links {
         @include flex-col();
         gap: 5px;
-
-        &__primary, &__secondary {
-            @include flex-col();
-            gap: 5px;
-        }
+        list-style-type: none;
 
         &__primary {
             font-weight: 500;
