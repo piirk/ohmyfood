@@ -491,6 +491,106 @@ main {
             display: none;
         }
     }
+
+    // animations
+    .cards .card, &__legend {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    // classes spécifiques pour faire apparaitre progressivement
+    // temporaire : à changer avec du JS
+
+    @mixin animation-menu {
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+    $animation-menu-timer: 0ms;
+    $animation-menu-delay: 100ms;
+
+    .anim1 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim2 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim3 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim4 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim5 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim6 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim7 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim8 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim9 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim10 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim11 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim12 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    .anim13 {
+        @include animation-menu();
+        animation-delay: $animation-menu-timer;
+        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
 }
 
 .footer {

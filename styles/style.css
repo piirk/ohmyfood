@@ -519,6 +519,73 @@ main {
 .menu__price dd {
   display: none;
 }
+.menu .cards .card, .menu__legend {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.menu .anim1 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0ms;
+}
+.menu .anim2 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 100ms;
+}
+.menu .anim3 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 200ms;
+}
+.menu .anim4 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 300ms;
+}
+.menu .anim5 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 400ms;
+}
+.menu .anim6 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 500ms;
+}
+.menu .anim7 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 600ms;
+}
+.menu .anim8 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 700ms;
+}
+.menu .anim9 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 800ms;
+}
+.menu .anim10 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 900ms;
+}
+.menu .anim11 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 1000ms;
+}
+.menu .anim12 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 1100ms;
+}
+.menu .anim13 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 1200ms;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 .footer {
   display: flex;
