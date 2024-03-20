@@ -187,12 +187,12 @@ main {
     }
 
     &__unliked {
-        transition: opacity 300ms;
+        transition: opacity 3000ms;
         opacity: 1;
     }
 
     .favorite__liked {
-        transition: opacity 300ms;
+        transition: opacity 3000ms;
         opacity: 0;
         background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
         background-clip: text;
@@ -201,12 +201,12 @@ main {
 
     &:hover {
         .favorite__unliked {
-            transition: opacity 300ms;
+            transition: opacity 3000ms;
             opacity: 0;
         }
 
         .favorite__liked {
-            transition: opacity 300ms;
+            transition: opacity 3000ms;
             opacity: 1;
         }
     }
@@ -496,91 +496,11 @@ main {
     }
 
     // classes spécifiques pour faire apparaitre progressivement
-    // temporaire : à changer avec du JS
-
-    @mixin animation-menu {
-        animation: fadeInUp 0.5s ease forwards;
-    }
-
-    $animation-menu-timer: 0ms;
-    $animation-menu-delay: 100ms;
-
-    .anim1 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim2 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim3 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim4 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim5 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim6 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim7 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim8 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim9 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim10 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim11 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim12 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
-    }
-
-    .anim13 {
-        @include animation-menu();
-        animation-delay: $animation-menu-timer;
-        $animation-menu-timer: $animation-menu-timer + $animation-menu-delay;
+    @for $i from 1 through $nb-dish {
+        .anim#{$i} {
+            animation: fadeInUp 0.5s ease forwards;
+            animation-delay: $animation-menu-delay * $i;
+        }
     }
 
     @keyframes fadeInUp {

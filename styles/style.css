@@ -233,11 +233,11 @@ main {
   position: absolute;
 }
 .favorite__unliked {
-  transition: opacity 300ms;
+  transition: opacity 3000ms;
   opacity: 1;
 }
 .favorite .favorite__liked {
-  transition: opacity 300ms;
+  transition: opacity 3000ms;
   opacity: 0;
   background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   -webkit-background-clip: text;
@@ -245,11 +245,11 @@ main {
   -webkit-text-fill-color: transparent;
 }
 .favorite:hover .favorite__unliked {
-  transition: opacity 300ms;
+  transition: opacity 3000ms;
   opacity: 0;
 }
 .favorite:hover .favorite__liked {
-  transition: opacity 300ms;
+  transition: opacity 3000ms;
   opacity: 1;
 }
 
@@ -516,9 +516,6 @@ main {
   align-items: flex-end;
   font-weight: 700;
 }
-.menu__price dd {
-  display: none;
-}
 .menu .cards .card, .menu__legend {
   opacity: 0;
   transform: translateX(20px);
@@ -526,55 +523,63 @@ main {
 }
 .menu .anim1 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 0ms;
+  animation-delay: 100ms;
 }
 .menu .anim2 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 100ms;
+  animation-delay: 200ms;
 }
 .menu .anim3 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 200ms;
+  animation-delay: 300ms;
 }
 .menu .anim4 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 300ms;
+  animation-delay: 400ms;
 }
 .menu .anim5 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 400ms;
+  animation-delay: 500ms;
 }
 .menu .anim6 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 500ms;
+  animation-delay: 600ms;
 }
 .menu .anim7 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 600ms;
+  animation-delay: 700ms;
 }
 .menu .anim8 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 700ms;
+  animation-delay: 800ms;
 }
 .menu .anim9 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 800ms;
+  animation-delay: 900ms;
 }
 .menu .anim10 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 900ms;
+  animation-delay: 1000ms;
 }
 .menu .anim11 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 1000ms;
+  animation-delay: 1100ms;
 }
 .menu .anim12 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 1100ms;
+  animation-delay: 1200ms;
 }
 .menu .anim13 {
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: 1200ms;
+  animation-delay: 1300ms;
+}
+.menu .anim14 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 1400ms;
+}
+.menu .anim15 {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 1500ms;
 }
 @keyframes fadeInUp {
   from {
